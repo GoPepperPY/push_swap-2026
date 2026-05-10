@@ -6,17 +6,17 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:55:07 by gopiment          #+#    #+#             */
-/*   Updated: 2026/04/23 17:38:27 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/10 04:17:49 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int	counter;
-	int	saver;
-	int	rest;
+	long	counter;
+	long	saver;
+	long	rest;
 
 	rest = 0;
 	saver = 1;

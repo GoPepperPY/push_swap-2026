@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:44:11 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/09 20:55:02 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/10 05:35:17 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t	nmemb, size_t size);
 int		ft_isalnum(int c);
@@ -36,11 +37,11 @@ int		ft_isprint(int c);
 char	*ft_itoa(int n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstclear(t_list **lst);
+void	ft_lstdelone(t_list *lst, void (*del)(int));
+void	ft_lstiter(t_list *lst, void (*f)(int));
 t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*));
+t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int));
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 void	*ft_memchr(const void *str, int c, size_t n);
