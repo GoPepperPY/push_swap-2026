@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:26:56 by gopiment          #+#    #+#             */
-/*   Updated: 2026/04/23 13:57:19 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/15 08:53:04 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list	*current;
 	int		counter;
 
-	current = lst;
 	counter = 0;
 	while (lst)
 	{

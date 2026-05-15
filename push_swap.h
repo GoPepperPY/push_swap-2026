@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/10 05:17:54 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/15 09:24:22 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ int		input_flags_check(char **args, t_input **input);
 // push functions
 void	push_b(t_list **stack_a, t_list **stack_b);
 void	push_a(t_list **stack_a, t_list **stack_b);
+// swap functions
+void	swap(t_list **stack);
+void	swap_swap(t_list **stack_a, t_list **stack_b); 
 
 
 

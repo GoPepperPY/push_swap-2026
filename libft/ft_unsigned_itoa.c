@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 15:06:04 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/01 15:08:30 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/15 08:57:29 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
