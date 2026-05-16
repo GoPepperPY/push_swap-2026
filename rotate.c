@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:41 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/16 08:44:55 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/16 08:45:42 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	rotate(t_list	**stack)
 void	rotate_rotate(t_list **stack_a, t_list **stack_b)
 {
 	rotate(stack_a);
-	rotate(stack_b);	
+	rotate(stack_b);
 }
