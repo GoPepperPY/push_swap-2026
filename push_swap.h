@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/15 09:24:22 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/16 08:23:06 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void	push_a(t_list **stack_a, t_list **stack_b);
 // swap functions
 void	swap(t_list **stack);
 void	swap_swap(t_list **stack_a, t_list **stack_b); 
+// rotate functions
+void	rotate(t_list	**stack);
+void	rotate_rotate(t_list **stack_a, t_list **stack_b);
 
 
 
