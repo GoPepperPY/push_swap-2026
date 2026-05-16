@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:41 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/16 08:45:42 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/16 09:15:20 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rotate(t_list	**stack)
 	t_list	*temp;
 	t_list	*current;
 
+	if (!stack || !*stack || !(*stack)->next)
+		return;
 	temp = *stack;
 	*stack = (*stack)->next;
 	current = *stack;
