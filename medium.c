@@ -6,7 +6,13 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:49 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 04:44:50 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/17 06:58:57 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	medium(t_list **stack_a, t_list **stack_b, t_input *input)
+{
+	
+}
