@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:41 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/16 09:15:20 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/16 22:55:47 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 void	rotate(t_list	**stack)
 {
@@ -18,7 +18,7 @@ void	rotate(t_list	**stack)
 	t_list	*current;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	temp = *stack;
 	*stack = (*stack)->next;
 	current = *stack;

@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 02:33:40 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/10 05:33:35 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/17 01:32:55 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	avoid_clones(t_list **stack)
 	t_list	*runner;
 
 	current = *stack;
-	while(current)
+	while (current)
 	{
 		runner = *stack;
-		while(runner)
+		while (runner)
 		{
 			if (runner->content == current->content && runner != current)
 			{
@@ -40,23 +40,34 @@ void	avoid_clones(t_list **stack)
 	}
 }
 
-void    validate_number(char *argument)
+void	free_split(char **split)
 {
-    int     counter;
-    long    number;
+	int	counter;
 
-    counter = 0;
-    if (argument[counter] == '+' || argument[counter] == '-')
-        counter++;
-    if (!argument[counter])
-        error();
-    while (argument[counter])
-    {
-        if (!ft_isdigit(argument[counter]))
-            error();
-        counter++;
-    }
-    number = ft_atoi(argument);
-    if (number > INT_MAX || number < INT_MIN)
-        error();
+	counter = -1;
+	while (split[++counter])
+		free(split[counter]);
+	free(split);
+}
+
+int	validate_number(char *argument)
+{
+	int		counter;
+	long	number;
+
+	counter = 0;
+	if (argument[counter] == '+' || argument[counter] == '-')
+		counter++;
+	if (!argument[counter])
+		return (0);
+	while (argument[counter])
+	{
+		if (!ft_isdigit(argument[counter]))
+			return (0);
+		counter++;
+	}
+	number = ft_atoi(argument);
+	if (number > INT_MAX || number < INT_MIN)
+		return (0);
+	return (1);
 }

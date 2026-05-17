@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 02:37:18 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/10 04:37:31 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/17 01:54:24 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_list(t_list *stack_a, t_list *stack_b)
 	ft_printf("STACK A: \n");
 	while (current != NULL)
 	{
-		ft_printf("%d\n", current->content);
+		ft_printf("%d | indice-> %d\n", current->content, current->index);
 		current = current->next;
 	}
 	ft_printf("\n\nSTACK b: \n");

@@ -6,43 +6,79 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 19:46:54 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/10 05:35:25 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/17 01:55:59 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	fill_my_stack(char **args, t_list **stack_a, int argc, t_input input)
+t_list	*input_index(t_list **stack_a, t_input *input)
 {
-	int	counter;
+	t_list	*current;
+	t_list	*tmp;
+	int		counter;
 
-	(void) argc;
-	// if(argc == 2)
-	// 	args = ft_split(args[0], ' ');
+	current = *stack_a;
+	while(current)
+	{
+		tmp = *stack_a;
+		counter = 0;
+		while(tmp)
+		{
+			if(tmp->content > current->content)
+				counter++;
+			tmp = tmp->next;
+		}
+		current->index = input->size - counter - 1;
+		current = current->next;
+	}
+	current = *stack_a;
+	return (current);
+}
+
+void	fill_my_stack(char **args, t_list **stack_a, t_input input)
+{
+	int		counter;
+	int		counter1;
+	char	**split;
+
 	counter = 0;
-	if(input.flags.strategy != 0)
+	if (input.flags.strategy != 0)
 		counter++;
-	if(input.flags.bench != 0)
+	if (input.flags.bench != 0)
 		counter++;
-	while(args[++counter])
-		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(args[counter])));
+	while (args[++counter])
+	{
+		if (ft_strchr(args[counter], ' '))
+		{
+			split = ft_split(args[counter], ' ');
+			if (!split)
+				error();
+			counter1 = -1;
+			while (split[++counter1])
+				ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(split[counter1])));
+			free_split(split);
+		}
+		else
+			ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(args[counter])));
+	}
 	avoid_clones(stack_a);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_list  *stack_a;
-    t_list  *stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	t_input	input;
 
-    stack_a = NULL;
-    stack_b = NULL;
-
+	stack_a = NULL;
+	stack_b = NULL;
+	(void) argc;
 	parsing(argv, &input);
-    fill_my_stack(argv, &stack_a, argc, input);
+	fill_my_stack(argv, &stack_a, input);
 	input.size = ft_lstsize(stack_a);
-
-	// CHECK PARSING
-	print_parsing(&input, stack_a, stack_b);
-    return (0);
+	stack_a = input_index(&stack_a, &input);
+	// CHECK PARSING 
+	print_parsing(&input, stack_a, stack_b); 
+	return (0);
 }

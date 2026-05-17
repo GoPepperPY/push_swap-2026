@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:43 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/16 09:15:09 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/16 23:23:22 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	swap(t_list **stack)
 {
 	t_list	*temp;
 	t_list	*temp_next;
-	
+
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	temp = *stack;
 	temp_next = (*stack)->next->next;
 	*stack = (*stack)->next;

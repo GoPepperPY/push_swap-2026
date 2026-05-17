@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rev-rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:38 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/16 09:15:24 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/16 22:55:10 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 void	rev_rotate(t_list	**stack)
 {
@@ -19,7 +19,7 @@ void	rev_rotate(t_list	**stack)
 	t_list	*temp;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	temp = *stack;
 	current = *stack;
 	while (current->next->next)
