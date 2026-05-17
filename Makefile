@@ -4,7 +4,8 @@ CFLAGS      = -Wall -Wextra -Werror
 RM          = rm -f
 
 SRCS        = parsing.c push_swap.c error.c push.c \
-              rev-rotate.c rotate.c swap.c to_delete/check_structs_insert.c
+              rev-rotate.c rotate.c swap.c to_delete/check_structs_insert.c \
+			  sort.c bench.c small_sort.c
 
 SRC_OBJS    = $(SRCS:.c=.o)
 

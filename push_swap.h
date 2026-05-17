@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/16 23:48:49 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/17 06:32:29 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@ typedef struct s_flags
 {
 	int		strategy;
 	int		bench;
+	double	disorder;
+	int		sa;
+	int		sb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		pa;
+	int		pb;
+	int		rrr;
+	int		ss;
 }	t_flags;
 
 typedef struct s_input
@@ -37,26 +49,40 @@ void	fill_my_stack(char **args, t_list **stack_a, t_input input);
 void	parsing(char **args, t_input *input);
 int		input_flags_check(char **args, t_input **input);
 
+/*********************|>    <|*********************/
 // push functions
-void	push_b(t_list **stack_a, t_list **stack_b);
-void	push_a(t_list **stack_a, t_list **stack_b);
+void	push_b(t_list **stack_a, t_list **stack_b, t_input **input);
+void	push_a(t_list **stack_a, t_list **stack_b, t_input **input);
 
 // swap functions
-void	swap(t_list **stack);
-void	swap_swap(t_list **stack_a, t_list **stack_b);
+void	sa(t_list **stack, t_input **input);
+void	sb(t_list **stack, t_input **input);
+void	swap_swap(t_list **stack_a, t_list **stack_b, t_input **input);
 
 // rotate functions
-void	rotate(t_list	**stack);
-void	rotate_rotate(t_list **stack_a, t_list **stack_b);
+void	rb(t_list	**stack, t_input **input);
+void	ra(t_list	**stack, t_input **input);
+void	rotate_rotate(t_list **stack_a, t_list **stack_b, t_input **input);
 
 // rev rotatate funtions
-void	rev_rotate(t_list	**stack);
-void	rev_rotate_rotate(t_list **stack_a, t_list **stack_b);
+void	rra(t_list	**stack, t_input **input);
+void	rrb(t_list	**stack, t_input **input);
+void	rev_rotate_rotate(t_list **stack_a, t_list **stack_b, t_input **input);
 
-/**********************|>  ERROR  <|**********************/
+/**********************|>  ERROR.c  <|**********************/
 void	error(void);
 int		validate_number(char *argument);
 void	avoid_clones(t_list **stack);
 void	free_split(char **split);
+
+/**********************|>  SORT.c  <|**********************/
+void	sort(t_list **stack_a, t_list **stack_b, t_input *input);
+
+/**********************|>  BENCH.c  <|**********************/
+double	compute_disorder(t_list *stack);
+
+/**********************|>  SMALL_SORT.c  <|**********************/
+void	sort_three_numbers(t_list **stack_a, t_input **input);
+void	check_small(t_list **stack_a, t_input *input);
 
 #endif

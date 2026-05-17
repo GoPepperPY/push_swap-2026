@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 19:46:54 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 01:55:59 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/17 06:33:36 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(int argc, char **argv)
 	fill_my_stack(argv, &stack_a, input);
 	input.size = ft_lstsize(stack_a);
 	stack_a = input_index(&stack_a, &input);
-	// CHECK PARSING 
-	print_parsing(&input, stack_a, stack_b); 
+	sort(&stack_a, &stack_b, &input);
+	// print_parsing(&input, stack_a, stack_b); 
 	return (0);
 }

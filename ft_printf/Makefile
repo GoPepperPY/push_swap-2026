@@ -6,17 +6,17 @@
 #    By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/07 15:54:13 by gopiment          #+#    #+#              #
-#    Updated: 2026/05/09 19:04:23 by gopiment         ###   ########.fr        #
+#    Updated: 2026/05/17 05:28:56 by gopiment         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = libftprintf.a
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -g
 AR          = ar rcs
 RM          = rm -f
 
-SRCS        = ft_printf.c utils.c
+SRCS        = ft_printf.c utils.c print_disorder.c
 
 SRC_OBJS    = $(SRCS:.c=.o)
 

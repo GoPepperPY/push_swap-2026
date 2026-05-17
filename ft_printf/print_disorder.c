@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   print_disorder.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/17 02:22:44 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 06:33:03 by gopiment         ###   ########.fr       */
+/*   Created: 2026/05/17 04:05:06 by gopiment          #+#    #+#             */
+/*   Updated: 2026/05/17 04:13:31 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	sort(t_list **stack_a, t_list **stack_b, t_input *input)
+void	print_disorder(double disorder)
 {
-	(void) stack_b;
-	if (input->flags.bench)
-		input->flags.disorder = compute_disorder((*stack_a));
-	if (input->size <= 3)
-		check_small(stack_a, input);
+	int	integer_part;
+	int	decimal_part;
+
+	disorder *= 100;
+	integer_part = (int)disorder;
+	decimal_part = (int)((disorder - integer_part) * 100);
+	ft_printf("[bench] disorder: %d.", integer_part);
+	if (decimal_part < 10)
+		ft_printf("0");
+	ft_printf("%d%%\n", decimal_part);
 }
