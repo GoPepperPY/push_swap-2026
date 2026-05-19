@@ -6,19 +6,33 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:22:44 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 07:04:13 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/19 16:24:51 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	is_sorted(t_list *stack_a)
+{
+	while(stack_a->next->content)
+	{
+		if(stack_a->content > stack_a->next->content)
+			return(0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}
+
 void	sort(t_list **stack_a, t_list **stack_b, t_input *input)
 {
-	(void) stack_b;
-	if (input->flags.bench)
-		input->flags.disorder = compute_disorder((*stack_a));
+	input->flags.disorder = compute_disorder((*stack_a));
 	if (input->size <= 3)
 		check_small(stack_a, input);
-	// if (input->flags.strategy == 2)
-	// 	medium(stack_a, stack_b, input);
+	// else if (input->flags.strategy == 1 || input->flags.disorder < 0.2)
+	// simple(stack_a, stack_b, input);
+	// else if (input->flags.strategy == 2 || input->flags.disorder >= 0.2 && \
+	// 	input->flags.disorder < 0.5)
+	// 	medium();
+	// else if (input->flags.strategy == 3 || input->flags.disorder >= 0.5)
+	complex(stack_a, stack_b, input);
 }

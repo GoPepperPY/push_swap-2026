@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 02:37:18 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 06:02:32 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/19 11:54:34 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	print_inputflags(t_input *input)
 void 	print_parsing(t_input *input, t_list *stack_a, t_list *stack_b)
 {
 	ft_printf("\n\n<-----!PRINT PARSING DISTRIBUTION!----->\n\n");
-	// print_inputflags(input);
-	(void)input;
+	print_inputflags(input);
 	print_list(stack_a, stack_b);
 }

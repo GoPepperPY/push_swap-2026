@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 06:32:29 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/19 16:12:22 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	free_split(char **split);
 
 /**********************|>  SORT.c  <|**********************/
 void	sort(t_list **stack_a, t_list **stack_b, t_input *input);
+int		is_sorted(t_list *stack_a);
 
 /**********************|>  BENCH.c  <|**********************/
 double	compute_disorder(t_list *stack);
@@ -84,5 +85,11 @@ double	compute_disorder(t_list *stack);
 /**********************|>  SMALL_SORT.c  <|**********************/
 void	sort_three_numbers(t_list **stack_a, t_input **input);
 void	check_small(t_list **stack_a, t_input *input);
+
+/**********************|>  SIMPLE.c  <|**********************/
+void	simple(t_list **stack_a, t_list	**stack_b, t_input *input);
+
+/**********************|>  COMPLEX.c  <|**********************/
+void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
 
 #endif

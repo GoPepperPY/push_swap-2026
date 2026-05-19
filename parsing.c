@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 23:39:52 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 05:39:35 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/19 12:04:08 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	input_flags_check(char **args, t_input **input)
 			(*input)->flags.strategy = 3;
 		else if (!ft_strncmp(args[counter], "--adaptive", \
 ft_strlen("--adaptive")) && !(*input)->flags.strategy)
-			(*input)->flags.strategy = 4;
+			(*input)->flags.strategy = 0;
 		else
 			break ;
 	}

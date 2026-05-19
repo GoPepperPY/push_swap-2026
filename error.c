@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 02:33:40 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 01:32:55 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/19 12:08:47 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(void)
 {
-	ft_putstr_fd("mamada parafuso!\n\n", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit (1);
 }
 
