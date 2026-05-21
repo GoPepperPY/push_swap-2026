@@ -6,13 +6,13 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 16:11:17 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/20 16:19:27 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/21 19:23:46 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	complex(t_list **stack_a, t_list	**stack_b, t_input *input)
-{
+// void	complex(t_list **stack_a, t_list	**stack_b, t_input *input)
+// {
 	
-}
+// }

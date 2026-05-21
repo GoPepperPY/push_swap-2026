@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/19 16:12:22 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/21 23:58:25 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	check_small(t_list **stack_a, t_input *input);
 
 /**********************|>  SIMPLE.c  <|**********************/
 void	simple(t_list **stack_a, t_list	**stack_b, t_input *input);
+int		best_rotation(t_list *stack_b, int value);
 
 /**********************|>  COMPLEX.c  <|**********************/
 void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
