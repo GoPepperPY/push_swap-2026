@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:31 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/22 00:31:19 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/22 15:43:31 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,77 +37,130 @@
 // 	}
 // }
 
-int    best_rotation(t_list *stack_b, int value)
+int	get_position(t_list	*stack, int	value)
+{
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		if (stack->content == value)
+			break;
+		pos++;
+		stack = stack->next;
+	}
+	return (pos);
+}
+
+int    best_rotation(t_list *stack_a, t_list *stack_b)
 {
     t_list  *current;
     int     pos;
-    int     size;
 
     current = stack_b;
     pos = 0;
-    size = ft_lstsize(stack_b);
     while (current)
     {
-        if (current->content < value)
+        if (current->content < stack_a->content)
             break ;
         pos++;
         current = current->next;
     }
-    if (pos <= size / 2)
-        return (pos);
-    else
-        return (-(size - pos));
+    return (pos);
 }
 
-int    find_max(t_list *stack)
+t_list    *find_max(t_list *stack)
 {
     t_list  *current;
-    int		max;
+    t_list	*max;
 
     current = stack;
+	max = stack;
     while (current)
     {
-        if (current->content > max)
-            max = current->content;
+        if (current->content > max->content)
+            max = current;
         current = current->next;
     }
     return (max);
 }
 
+t_list    *find_min(t_list *stack)
+{
+	t_list  *current;
+    t_list	*min;
+
+    current = stack;
+	min = stack;
+    while (current)
+    {
+        if (current->content < min->content)
+            min = current;
+        current = current->next;
+    }
+    return (min);
+}
+// ➜ ./push_swap 3 1 2 5 4
+
+// void	simple(t_list **stack_a, t_list	**stack_b, t_input *input)
+// {
+// 	push_b(stack_a, stack_b, &input);
+// 	push_b(stack_a, stack_b, &input);
+// 	while(ft_lstsize((*stack_a)))
+// 	{
+// 		if ((*stack_a)->content < (*stack_b)->content && (*stack_a)->content > (*stack_b)->next->content/*  && ft_lstlast((*stack_b))->content < (*stack_a)->content */)
+// 		{
+// 			rb(stack_b, &input);void	simple(t_list **stack_a, t_list	**stack_b, t_input *input)
+// 			push_b(stack_a, stack_b, &input);
+// 		}
+// 		else if ((*stack_a)->content < (*stack_b)->content && ft_lstlast((*stack_b))->content < (*stack_b)->content && ft_lstlast((*stack_b))->content > (*stack_a)->content)	
+// 			push_b(stack_a, stack_b, &input);
+// 		else if ((*stack_a)->content > (*stack_b)->content && ft_lstlast((*stack_b))->content < (*stack_b)->content && ft_lstlast((*stack_b))->content < (*stack_a)->content)
+// 			push_b(stack_a, stack_b, &input);
+// 		else
+// 			rb(stack_b, &input);
+// 	}
+// 	if (find_max((*stack_b)) != (*stack_b))
+// 	{
+// 		if (best_rotation((*stack_b), (*stack_b)->content))
+// 		{
+// 			while(find_max((*stack_b)) != (*stack_b))
+// 				rb(stack_b, &input);
+// 		}
+// 		else
+// 		{
+// 			while(find_max((*stack_b)) != (*stack_b))
+// 				rrb(stack_b, &input);
+// 		}
+// 	}
+// 	while(ft_lstsize((*stack_b)))
+// 		push_a(stack_a, stack_b, &input);
+// }
+
 void	simple(t_list **stack_a, t_list	**stack_b, t_input *input)
 {
-	int	counter;
-
-	push_b(stack_a, stack_b, &input);
-	push_b(stack_a, stack_b, &input);
-	if((*stack_b)->content < (*stack_b)->next->content)
-		rb(stack_b, &input);
-	while(ft_lstsize((*stack_a)))
+	if (get_position((*stack_a) ,find_min((*stack_a))->content) < ft_lstsize((*stack_a)) / 2)
 	{
-		counter = -1;
-		if (best_rotation((*stack_b), (*stack_a)->content) > 0)
-		{
-			while((*stack_a)->content < (*stack_b)->content && ++counter < ft_lstsize((*stack_b)))
-				rb(stack_b, &input);
-		}
-		else if (best_rotation((*stack_b), (*stack_a)->content) < 0)
-		{
-			while((*stack_a)->content < (*stack_b)->content && ++counter < ft_lstsize((*stack_b)))
-				rrb(stack_b, &input);
-		}
-		// if ((*stack_b)->content < ft_lstlast((*stack_b))->content && (*stack_b)->content > (*stack_b)->next->content)
-			push_b(stack_a, stack_b, &input);
-		if(best_rotation((*stack_b), find_max((*stack_b))) > 0)
-		{
-			while ((*stack_b)->content < ft_lstlast((*stack_b))->content)
-				rrb(stack_b, &input);
-		}
-		else if (best_rotation((*stack_b), find_max((*stack_b))) < 0)
-		{
-			while((*stack_b)->content < ft_lstlast((*stack_b))->content)
-				rb(stack_b, &input);
-		}
+		while (*stack_a != find_min((*stack_a)))
+			ra(stack_a, &input);
+		push_b(stack_a, stack_b, &input);
 	}
-	// while(ft_lstsize((*stack_b)))
-	// 	push_a(stack_a, stack_b, &input);
+	else
+	{
+		while (*stack_a != find_min((*stack_a)))
+			rra(stack_a, &input);
+		push_b(stack_a, stack_b, &input);
+	}
+	if (get_position((*stack_a) ,find_max((*stack_a))->content) < ft_lstsize((*stack_a)) / 2)
+	{
+		while (*stack_a != find_max((*stack_a)))
+			ra(stack_a, &input);
+		push_b(stack_a, stack_b, &input);
+	}
+	else
+	{
+		while (*stack_a != find_max((*stack_a)))
+			rra(stack_a, &input);
+		push_b(stack_a, stack_b, &input);
+	}
 }

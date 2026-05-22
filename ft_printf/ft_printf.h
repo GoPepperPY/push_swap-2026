@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 13:51:01 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/17 04:06:28 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/22 15:45:59 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include "../libft/libft.h"
+# include <stdarg.h>
 
 int		ft_printf(const char *input, ...);
 int		check_flags(va_list args, int c);
