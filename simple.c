@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:31 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/22 15:43:31 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/22 16:29:36 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int    best_rotation(t_list *stack_a, t_list *stack_b)
     pos = 0;
     while (current)
     {
-        if (current->content < stack_a->content)
+        if (stack_a->content < current->content && stack_a->content > current->next->content)
             break ;
         pos++;
         current = current->next;
