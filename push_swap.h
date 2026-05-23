@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/22 15:40:48 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/23 20:53:01 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	check_small(t_list **stack_a, t_input *input);
 
 /**********************|>  SIMPLE.c  <|**********************/
 void	simple(t_list **stack_a, t_list	**stack_b, t_input *input);
-int    best_rotation(t_list *stack_a, t_list *stack_b);
+void    best_rotation(t_list **stack_find, t_list **stack_push, t_input *input);
 
 /**********************|>  COMPLEX.c  <|**********************/
 void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
