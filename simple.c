@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:31 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/22 16:29:36 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/05/23 10:25:10 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,28 +139,38 @@ t_list    *find_min(t_list *stack)
 
 void	simple(t_list **stack_a, t_list	**stack_b, t_input *input)
 {
-	if (get_position((*stack_a) ,find_min((*stack_a))->content) < ft_lstsize((*stack_a)) / 2)
+	while(ft_lstsize((*stack_a)) > 0)
 	{
-		while (*stack_a != find_min((*stack_a)))
-			ra(stack_a, &input);
-		push_b(stack_a, stack_b, &input);
+		if (get_position((*stack_a) ,find_min((*stack_a))->content) < ft_lstsize((*stack_a)) / 2)
+		{
+			while (*stack_a != find_min((*stack_a)))
+				ra(stack_a, &input);
+			push_b(stack_a, stack_b, &input);
+		}
+		else
+		{
+			while (*stack_a != find_min((*stack_a)))
+				rra(stack_a, &input);
+			push_b(stack_a, stack_b, &input);
+		}
 	}
-	else
+	while(stack_b)
 	{
-		while (*stack_a != find_min((*stack_a)))
-			rra(stack_a, &input);
-		push_b(stack_a, stack_b, &input);
+		push_a(stack_a, stack_b, &input);
 	}
-	if (get_position((*stack_a) ,find_max((*stack_a))->content) < ft_lstsize((*stack_a)) / 2)
-	{
-		while (*stack_a != find_max((*stack_a)))
-			ra(stack_a, &input);
-		push_b(stack_a, stack_b, &input);
-	}
-	else
-	{
-		while (*stack_a != find_max((*stack_a)))
-			rra(stack_a, &input);
-		push_b(stack_a, stack_b, &input);
-	}
+	// while (stack_a)
+	// {
+	// 	if (get_position((*stack_a) ,find_max((*stack_a))->content) < ft_lstsize((*stack_a)) / 2)
+	// 	{
+	// 		while (*stack_a != find_max((*stack_a)))
+	// 			ra(stack_a, &input);
+	// 		push_b(stack_a, stack_b, &input);
+	// 	}
+	// 	else
+	// 	{
+	// 		while (*stack_a != find_max((*stack_a)))
+	// 			rra(stack_a, &input);
+	// 		push_b(stack_a, stack_b, &input);
+	// 	}
+	// }
 }
