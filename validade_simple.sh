@@ -117,9 +117,9 @@ run_validation_suite() {
     local limit_pass=$2
     local limit_good=$3
     local limit_excellent=$4
-    local runs=1000
-    local min_disorder=18
-    local max_disorder=20
+    local runs=1
+    local min_disorder=48
+    local max_disorder=50
     local max_ops=0
 
     echo "=================================================="

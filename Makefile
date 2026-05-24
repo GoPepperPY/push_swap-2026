@@ -5,7 +5,7 @@ RM          = rm -f
 
 SRCS        = parsing.c push_swap.c error.c push.c \
               rev-rotate.c rotate.c swap.c to_delete/check_structs_insert.c \
-			  sort.c bench.c small_sort.c simple.c complex.c
+			  sort.c bench.c small_sort.c simple.c complex.c medium.c
 
 SRC_OBJS    = $(SRCS:.c=.o)
 
