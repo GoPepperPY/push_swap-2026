@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:49 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 07:00:16 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/24 08:09:52 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_list	*find_ideal_chunk(t_list *stack, int chunk, t_input *input)
 	int		counter_1;
 	int		counter_2;
 	int		pos;
+
 	counter_1 = 0;
 	counter_2 = 0;
 	pos = 0;
@@ -60,16 +61,18 @@ t_list	*find_ideal_chunk(t_list *stack, int chunk, t_input *input)
 		current = (counter_2++, current->next);
 	}
 	pos = ft_lstsize(stack) - pos;
-	if(pos < counter_1)
-		return(min_2);
+	if (pos < counter_1)
+		return (min_2);
 	return (min_1);
 }
 
-void	best_rotation_chunk(t_list **stack_find, t_list **stack_push, t_input *input, int chunks)
+void	best_rotation_chunk(t_list **stack_find, t_list **stack_push, \
+t_input *input, int chunks)
 {
-	if(!find_ideal_chunk((*stack_find), chunks, input))
+	if (!find_ideal_chunk((*stack_find), chunks, input))
 		return ;
-	if (get_position((*stack_find), find_ideal_chunk((*stack_find), chunks, input)->content)
+	if (get_position((*stack_find), find_ideal_chunk((*stack_find), \
+chunks, input)->content)
 		<= ft_lstsize((*stack_find)) / 2)
 	{
 		while ((*stack_find) != find_ideal_chunk((*stack_find), chunks, input))
@@ -84,7 +87,8 @@ void	best_rotation_chunk(t_list **stack_find, t_list **stack_push, t_input *inpu
 	}
 }
 
-void	best_rotation_a(t_list **stack_find, t_list **stack_push, t_input *input)
+void	best_rotation_a(t_list **stack_find, t_list **stack_push, \
+t_input *input)
 {
 	if (get_position((*stack_find), find_max((*stack_find))->content)
 		<= ft_lstsize((*stack_find)) / 2)
@@ -108,7 +112,7 @@ void	medium(t_list **stack_a, t_list **stack_b, t_input *input)
 
 	chunk = 1;
 	chunks = ft_sqrt(input->size);
-	while(chunk <= chunks)
+	while (chunk <= chunks)
 	{
 		while (find_ideal_chunk(*stack_a, chunk, input))
 			best_rotation_chunk(stack_a, stack_b, input, chunk);

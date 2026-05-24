@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 07:20:43 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/24 08:16:07 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,6 @@ typedef struct s_input
 }	t_input;
 
 /*********************|> TO_DELETE <|*********************/
-void	print_parsing(t_input *input, t_list *stack_a, t_list *stack_b);
-void	print_inputflags(t_input *input);
-void	print_list(t_list *stack_a, t_list *stack_b);
 void	fill_my_stack(char **args, t_list **stack_a, t_input input);
 
 /*********************|>  PARSING  <|*********************/
@@ -90,16 +87,16 @@ void	check_small(t_list **stack_a, t_input *input);
 
 /**********************|>  SIMPLE.c  <|**********************/
 void	simple(t_list **stack_a, t_list	**stack_b, t_input *input);
-void    best_rotation(t_list **stack_find, t_list **stack_push, t_input *input);
+void	best_rotation(t_list **stack_find, t_list **stack_push, t_input *input);
 int		get_position(t_list	*stack, int value);
 t_list	*find_max(t_list *stack);
-
 
 /**********************|>  COMPLEX.c  <|**********************/
 void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
 
 /**********************|>  MEDIUM.c  <|**********************/
 void	medium(t_list **stack_a, t_list **stack_b, t_input *input);
-void	best_rotation_a(t_list **stack_find, t_list **stack_push, t_input *input);
+void	best_rotation_a(t_list **stack_find, t_list **stack_push, \
+t_input *input);
 
 #endif

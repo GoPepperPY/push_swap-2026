@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 19:46:54 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 01:42:07 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/24 08:03:41 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ t_list	*input_index(t_list **stack_a, t_input *input)
 	int		counter;
 
 	current = *stack_a;
-	while(current)
+	while (current)
 	{
 		tmp = *stack_a;
 		counter = 0;
-		while(tmp)
+		while (tmp)
 		{
-			if(tmp->content > current->content)
+			if (tmp->content > current->content)
 				counter++;
 			tmp = tmp->next;
 		}
@@ -79,6 +79,5 @@ int	main(int argc, char **argv)
 	input.size = ft_lstsize(stack_a);
 	stack_a = input_index(&stack_a, &input);
 	sort(&stack_a, &stack_b, &input);
-	// print_parsing(&input, stack_a, stack_b); 
 	return (0);
 }

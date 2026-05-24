@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:19:43 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 07:40:33 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/24 08:12:40 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,57 +37,57 @@ double	compute_disorder(t_list *stack)
 	return ((double)mistakes / total);
 }
 
-void check_strat(int flag)
+void	check_strat(int flag)
 {
-	if(!flag)
+	if (!flag)
 		ft_putstr_fd("Adaptive\n", 2);
-	if(flag == 1)
+	if (flag == 1)
 		ft_putstr_fd("Simple\n", 2);
-	if(flag == 2)
+	if (flag == 2)
 		ft_putstr_fd("Medium\n", 2);
-	if(flag == 3)
+	if (flag == 3)
 		ft_putstr_fd("Complex\n", 2);
 }
 
-void bench(t_input *input)
+void	bench(t_input *input)
 {
-	write(2, "[bench] disorder: ", ft_strlen("[bench] disorder: "));
+	write (2, "[bench] disorder: ", ft_strlen("[bench] disorder: "));
 	ft_putnbr_fd((int)input->flags.disorder, 2);
-	write(2, ".", 1);
+	write (2, ".", 1);
 	if ((int)((input->flags.disorder - (int)input->flags.disorder) * 100) < 10)
-		write(2, "0", 1);
+		write (2, "0", 1);
 	ft_putnbr_fd((int)((input->flags.disorder - (int)input->flags.disorder) * 100), 2);
-	write(2, "%%", 1);
-	write(2, "\n", 1);
-	write(2, "[bench] strategy: ", ft_strlen("[bench] strategy: "));
+	write (2, "%%", 1);
+	write (2, "\n", 1);
+	write (2, "[bench] strategy: ", ft_strlen("[bench] strategy: "));
 	check_strat(input->flags.strategy);
-	write(2, "[bench] total_ops: ", ft_strlen("[bench] total_ops: "));
+	write (2, "[bench] total_ops: ", ft_strlen("[bench] total_ops: "));
 	ft_putnbr_fd(input->flags.sa + input->flags.sb + input->flags.ra + \
-		input->flags.rb + input->flags.rr + input->flags.rra + \
-		input->flags.rrb + input->flags.pa + input->flags.pb + \
-		input->flags.rrr + input->flags.ss, 2);
-	write(2, "\n[bench]", ft_strlen("\n[bench]"));
-	write(2, " sa : ", 6);
+input->flags.rb + input->flags.rr + input->flags.rra + \
+input->flags.rrb + input->flags.pa + input->flags.pb + \
+input->flags.rrr + input->flags.ss, 2);
+	write (2, "\n[bench]", ft_strlen("\n[bench]"));
+	write (2, " sa : ", 6);
 	ft_putnbr_fd(input->flags.sa, 2);
-	write(2, " sb :", 6);
+	write (2, " sb :", 6);
 	ft_putnbr_fd(input->flags.sb, 2);
-	write(2, " ra : ", 6);
+	write (2, " ra : ", 6);
 	ft_putnbr_fd(input->flags.ra, 2);
-	write(2, " rb : ", 6);
+	write (2, " rb : ", 6);
 	ft_putnbr_fd(input->flags.rb, 2);
-	write(2, " rr : ", 6);
+	write (2, " rr : ", 6);
 	ft_putnbr_fd(input->flags.rr, 2);
-	write(2, "\n[bench]", ft_strlen("\n[bench]"));
-	write(2, " rra : ", 7);
+	write (2, "\n[bench]", ft_strlen("\n[bench]"));
+	write (2, " rra : ", 7);
 	ft_putnbr_fd(input->flags.rra, 2);
-	write(2, " rrb :", 7);
+	write (2, " rrb :", 7);
 	ft_putnbr_fd(input->flags.rrb, 2);
-	write(2, " pa : ", 6);
+	write (2, " pa : ", 6);
 	ft_putnbr_fd(input->flags.pa, 2);
-	write(2, " pb :", 6);
+	write (2, " pb :", 6);
 	ft_putnbr_fd(input->flags.pb, 2);
-	write(2, " rrr : ", 7);
+	write (2, " rrr : ", 7);
 	ft_putnbr_fd(input->flags.rrr, 2);
-	write(2, " ss :", 6);
+	write (2, " ss :", 6);
 	ft_putnbr_fd(input->flags.ss, 2);
 }
