@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 04:03:15 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/24 07:20:43 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int		is_sorted(t_list *stack_a);
 
 /**********************|>  BENCH.c  <|**********************/
 double	compute_disorder(t_list *stack);
+void	bench(t_input *input);
+void	init(t_input *input);
 
 /**********************|>  SMALL_SORT.c  <|**********************/
 void	sort_three_numbers(t_list **stack_a, t_input **input);
