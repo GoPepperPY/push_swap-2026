@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 14:23:29 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/03 17:36:59 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:14:10 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int	print_string(char *c)
 {
 	if (!c)
-		return (write(1, "(null)", 6));
-	return (write(1, c, ft_strlen(c)));
+		return (write(2, "(null)", 6));
+	return (write(2, c, ft_strlen(c)));
 }
 
 int	print_int(long c)
 {
-	ft_putnbr_fd(c, 1);
+	ft_putnbr_fd(c, 2);
 	return (countdigit(c, 10));
 }
 
 int	print_uint(unsigned int c)
 {
-	ft_putnbr_fd(c, 1);
+	ft_putnbr_fd(c, 2);
 	return (countdigithex(c, 10));
 }
 
@@ -46,10 +46,10 @@ int	print_pointer(unsigned long pointer)
 
 	length = 0;
 	if (pointer == 0)
-		length = length + write(1, "(nil)", 5);
+		length = length + write(2, "(nil)", 5);
 	else
 	{
-		length += write(1, "0x", 2);
+		length += write(2, "0x", 2);
 		ft_putpointer(pointer);
 		length += pointer_length(pointer);
 	}

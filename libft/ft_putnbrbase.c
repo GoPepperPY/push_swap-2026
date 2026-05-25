@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 17:35:45 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/03 17:35:46 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:14:40 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	pt2(long tmp, char *tmp_str, char *base)
 		counter++;
 	}
 	while (--counter >= 0)
-		write(1, &tmp_str[counter], 1);
+		write(2, &tmp_str[counter], 1);
 }
 
 void	ft_putnbr_base(unsigned int nbr, char *base)
@@ -36,14 +36,14 @@ void	ft_putnbr_base(unsigned int nbr, char *base)
 
 	if (nbr == 0)
 	{
-		write(1, "0", 1);
+		write(2, "0", 1);
 		return ;
 	}
 	tmp = nbr;
 	if (tmp < 0)
 	{
 		tmp = -tmp;
-		write(1, "-", 1);
+		write(2, "-", 1);
 	}
 	pt2(tmp, tmp_str, base);
 }

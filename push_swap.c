@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 19:46:54 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 08:03:41 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 23:56:42 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*input_index(t_list **stack_a, t_input *input)
 				counter++;
 			tmp = tmp->next;
 		}
-		current->index = input->size - counter - 1;
+		current->index = input->size - counter;
 		current = current->next;
 	}
 	current = *stack_a;

@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 13:50:49 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/03 17:30:42 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:13:49 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	check_flags(va_list args, int c)
 	if (c == 'c')
 	{
 		c = va_arg(args, int);
-		return (write(1, &c, 1));
+		return (write(2, &c, 1));
 	}
 	else if (c == 's')
 		return (print_string(va_arg(args, char *)));
@@ -30,7 +30,7 @@ int	check_flags(va_list args, int c)
 	else if (c == 'p')
 		return (print_pointer(va_arg(args, unsigned long)));
 	else if (c == '%')
-		return (write(1, "%", 1));
+		return (write(2, "%", 1));
 	return (0);
 }
 
@@ -49,7 +49,7 @@ int	ft_printf(const char *input, ...)
 			counter += check_flags(args, input[0]);
 		}
 		else
-			counter += write(1, &input[0], 1);
+			counter += write(2, &input[0], 1);
 		input++;
 	}
 	va_end(args);

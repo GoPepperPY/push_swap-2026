@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 17:54:58 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/08 17:37:20 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:14:47 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	pt2(unsigned long tmp, char *tmp_str, char *base)
 		counter++;
 	}
 	while (--counter >= 0)
-		write(1, &tmp_str[counter], 1);
+		write(2, &tmp_str[counter], 1);
 }
 
 void	ft_putpointer(unsigned long pointer)

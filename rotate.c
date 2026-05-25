@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:41 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/21 23:24:50 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:08:52 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ra(t_list	**stack, t_input **input)
 		current = current->next;
 	current->next = temp;
 	current->next->next = NULL;
-	ft_printf("ra\n");
+	write(1, "ra\n", 3);
 	if ((*input)->flags.bench)
 		(*input)->flags.ra++;
 }
@@ -47,7 +47,7 @@ void	rb(t_list	**stack, t_input **input)
 	}
 	current->next = temp;
 	current->next->next = NULL;
-	ft_printf("rb\n");
+	write(1, "rb\n", 3);
 	if ((*input)->flags.bench)
 		(*input)->flags.rb++;
 }
@@ -56,7 +56,7 @@ void	rotate_rotate(t_list **stack_a, t_list **stack_b, t_input **input)
 {
 	ra(stack_a, input);
 	rb(stack_b, input);
-	ft_printf("rr\n");
+	write(1, "rr\n", 3);
 	if ((*input)->flags.bench)
 		(*input)->flags.rr++;
 }
