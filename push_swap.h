@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/24 08:16:07 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/05/25 16:11:24 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,11 @@ void	check_small(t_list **stack_a, t_input *input);
 
 /**********************|>  SIMPLE.c  <|**********************/
 void	simple(t_list **stack_a, t_list	**stack_b, t_input *input);
-void	best_rotation(t_list **stack_find, t_list **stack_push, t_input *input);
+void	best_rotation_in_a(t_list **stack_find, t_list *to_push, t_input *input);
+void	best_rotation_in_b(t_list **stack_find, t_list *to_push, t_input *input);
 int		get_position(t_list	*stack, int value);
 t_list	*find_max(t_list *stack);
+t_list	*best_fit(t_list *stack_b, t_list *to_fit);
 
 /**********************|>  COMPLEX.c  <|**********************/
 void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
