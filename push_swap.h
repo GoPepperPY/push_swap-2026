@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/25 16:11:24 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:55:04 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	best_rotation_in_a(t_list **stack_find, t_list *to_push, t_input *input);
 void	best_rotation_in_b(t_list **stack_find, t_list *to_push, t_input *input);
 int		get_position(t_list	*stack, int value);
 t_list	*find_max(t_list *stack);
+t_list	*find_min(t_list *stack);
 t_list	*best_fit(t_list *stack_b, t_list *to_fit);
 
 /**********************|>  COMPLEX.c  <|**********************/
