@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/01 11:55:04 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/01 16:04:41 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ typedef struct s_input
 	t_flags	flags;
 	int		size;
 }	t_input;
+
+typedef struct s_cost
+{
+	t_flags	flags;
+	int		cost;
+	int		strategy;
+}	t_cost;
 
 /*********************|> TO_DELETE <|*********************/
 void	fill_my_stack(char **args, t_list **stack_a, t_input input);
