@@ -1,1 +1,1 @@
-/home/danicamp/push_swap-2026/push_swap_visualizer/build/bin/visualizer
+/home/daniel-marques/Documentos/42/common_core/push_swap-2026/push_swap_visualizer/build/bin/visualizer

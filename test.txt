@@ -1,5 +1,0 @@
-total_bits: 4, max: 8
-bit: 0
-bit: 1
-bit: 2
-bit: 3
