@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/04 20:38:26 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:28:04 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,10 @@ void	simple(t_list **stack_a, t_list	**stack_b, t_input *input);
 int		get_position(t_list	*stack, int value);
 t_list	*find_max(t_list *stack);
 t_list	*find_min(t_list *stack);
-void	best_rotation_in_a(t_list **stack_find, t_list *to_push, t_input *input);
-void	best_rotation_in_b(t_list **stack_find, t_list *to_push, t_input *input);
-
+void	best_rotation_in_a(t_list **stack_find, t_list *to_push, \
+t_input *input);
+void	best_rotation_in_b(t_list **stack_find, t_list *to_push, \
+t_input *input);
 
 /**********************|>  COMPLEX.c  <|**********************/
 void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
@@ -111,6 +112,5 @@ void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
 void	medium(t_list **stack_a, t_list **stack_b, t_input *input);
 void	best_rotation_a(t_list **stack_find, t_list **stack_push, \
 t_input *input);
-
 
 #endif

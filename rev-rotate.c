@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev-rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 22:58:38 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/27 13:31:21 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:24:08 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	rev_rotate(t_list	**stack)
 	(*stack)->next = temp;
 	current->next = NULL;
 }
+
 void	rra(t_list	**stack, t_input **input)
 {
 	rev_rotate(stack);

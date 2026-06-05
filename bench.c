@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:19:43 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/25 19:06:16 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:23:50 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ void	bench(t_input *input)
 {
 	print_disorder(input->flags.disorder);
 	check_strat(input->flags.strategy);
-	ft_printf("[bench] total_ops: %d\n", input->flags.pa + input->flags.pb + input->flags.ra + input->flags.rb + input->flags.rr + input->flags.rra + input->flags.rrb + input->flags.rrr + input->flags.sa + input->flags.sb + input->flags.ss);
+	ft_printf("[bench] total_ops: %d\n", input->flags.pa + input->flags.pb + \
+input->flags.ra + input->flags.rb + input->flags.rr + \
+input->flags.rra + input->flags.rrb + input->flags.rrr + input->flags.sa \
++ input->flags.sb + input->flags.ss);
 	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n",
 		input->flags.sa, input->flags.sb, input->flags.ss,
 		input->flags.pa, input->flags.pb);
