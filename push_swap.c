@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 19:46:54 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 17:55:07 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:52:34 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,19 @@ void	fill_my_stack(char **args, t_list **stack_a, t_input input)
 	avoid_clones(stack_a);
 }
 
-int	main(int argc, char **argv)
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
-	t_input	input;
+// int	main(int argc, char **argv)
+// {
+// 	t_list	*stack_a;
+// 	t_list	*stack_b;
+// 	t_input	input;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	(void) argc;
-	parsing(argv, &input);
-	fill_my_stack(argv, &stack_a, input);
-	input.size = ft_lstsize(stack_a);
-	stack_a = input_index(&stack_a, &input);
-	sort(&stack_a, &stack_b, &input);
-	return (0);
-}
+// 	stack_a = NULL;
+// 	stack_b = NULL;
+// 	(void) argc;
+// 	parsing(argv, &input);
+// 	fill_my_stack(argv, &stack_a, input);
+// 	input.size = ft_lstsize(stack_a);
+// 	stack_a = input_index(&stack_a, &input);
+// 	sort(&stack_a, &stack_b, &input);
+// 	return (0);
+// }

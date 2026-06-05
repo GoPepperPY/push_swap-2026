@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 18:28:04 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:24:46 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,21 @@ void	complex(t_list **stack_a, t_list	**stack_b, t_input *input);
 void	medium(t_list **stack_a, t_list **stack_b, t_input *input);
 void	best_rotation_a(t_list **stack_find, t_list **stack_push, \
 t_input *input);
+
+/**********************|>  CHECKER.c  <|**********************/
+void	push_a_checker(t_list **stack_a, t_list **stack_b);
+void	push_b_checker(t_list **stack_a, t_list **stack_b);
+void	rev_rotate_checker(t_list	**stack);
+void	rra_checker(t_list	**stack);
+void	rrb_checker(t_list	**stack);
+void	rev_rotate_rotate_checker(t_list **stack_a, t_list **stack_b);
+void	rotate_checker(t_list	**stack);
+void	ra_checker(t_list	**stack);
+void	rb_checker(t_list	**stack);
+void	rotate_rotate_checker(t_list **stack_a, t_list **stack_b);
+void	swap_checker(t_list **stack);
+void	sa_checker(t_list **stack);
+void	sb_checker(t_list **stack);
+void	swap_swap_checker(t_list **stack_a, t_list **stack_b);
 
 #endif
