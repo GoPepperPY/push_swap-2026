@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:49 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 16:52:34 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:05:20 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,11 @@ t_list	*find_ideal_chunk(t_list *stack, int chunk, t_input *input)
 	return (min_1);
 }
 
-void	best_rotation_chunk(t_list **stack_find, t_list **stack_push, \
-t_input *input, int chunks)
+void	best_rotation_chunk(t_list **stack_find, t_list **stack_push, t_input *input, int chunks)
 {
 	if (!find_ideal_chunk((*stack_find), chunks, input))
 		return ;
-	if (get_position((*stack_find), find_ideal_chunk((*stack_find), \
-chunks, input)->index)
-		<= ft_lstsize((*stack_find)) / 2)
+	if (get_position((*stack_find), find_ideal_chunk((*stack_find), chunks, input)->index) <= ft_lstsize((*stack_find)) / 2)
 	{
 		while ((*stack_find) != find_ideal_chunk((*stack_find), chunks, input))
 			ra(stack_find, &input);
@@ -87,17 +84,15 @@ chunks, input)->index)
 	}
 }
 
-void	best_rotation_a(t_list **stack_find, t_list **stack_push, \
-t_input *input)
+void	best_rotation_a(t_list **stack_find, t_list **stack_push, t_input *input)
 {
-	if (get_position((*stack_find), find_max((*stack_find))->index)
-		<= ft_lstsize((*stack_find)) / 2)
+	if (get_position((*stack_find), find_max((*stack_find))->index) <= ft_lstsize((*stack_find)) / 2)
 	{
 		while (*stack_find != find_max((*stack_find)))
 			rb(stack_find, &input);
 		push_a(stack_push, stack_find, &input);
 	}
-	else
+	else if(!(get_position((*stack_find), find_max((*stack_find))->index) <= ft_lstsize((*stack_find)) / 2))
 	{
 		while (*stack_find != find_max((*stack_find)))
 			rrb(stack_find, &input);

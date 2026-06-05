@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 16:11:17 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 17:17:19 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/05 17:32:30 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	complex(t_list **stack_a, t_list	**stack_b, t_input *input)
 
 	i = 0;
 	j = 0;
-	ft_printf("ola");
 	lst_size = ft_lstsize((*stack_a));
 	bits = bit_count((*stack_a));
 	while (j < bits)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:53:06 by danicamp          #+#    #+#             */
-/*   Updated: 2026/06/01 11:54:15 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:08:01 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_position(t_list	*stack, int value)
 	pos = 0;
 	while (stack)
 	{
-		if (stack->content == value)
+		if (stack->index == value)
 			break ;
 		pos++;
 		stack = stack->next;
