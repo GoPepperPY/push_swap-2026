@@ -1,1 +1,0 @@
-/home/danicamp/push_swap-2026/push_swap_visualizer/build/bin/visualizer
