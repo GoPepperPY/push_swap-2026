@@ -6,51 +6,50 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 16:37:44 by danicamp          #+#    #+#             */
-/*   Updated: 2026/06/05 12:25:11 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:51:45 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	bit_count(t_list *stack_a)
-{
-	int	stack_size;
-	int	bit;
 
-	bit = 0;
-	stack_size = ft_lstsize(stack_a) - 1;
-	while (stack_size > 0)
+t_list	*to_push(t_list *stack_a, t_list *stack_b)
+{
+	t_list	*head;
+	
+	head = stack_a;
+	while (stack_a->next)
 	{
-		stack_size /= 2;
-		bit++;
+		if (stack_b->content > stack_a->content && stack_b->content < stack_a->next->content)
+			return (stack_a->next);
+		stack_a = stack_a->next;
 	}
-	return (bit);
+	return (head);
 }
 
-void	simple(t_list **stack_a, t_list	**stack_b, t_input *input)
+void	simple(t_list **stack_a, t_list **stack_b, t_input *input)
 {
-	int	lst_size;
-	int	i;
-	int	j;
-	int	bits;
+	t_list	*prev;
+	t_list	*min;
 
-	i = 0;
-	j = 0;
-	lst_size = ft_lstsize((*stack_a));
-	bits = bit_count((*stack_a));
-	while (j <= bits)
+	min = find_min((*stack_a));
+	prev = min;
+	best_rotation_in_a(stack_a, prev, input);
+	ra(stack_a, &input);
+	while (*stack_a != min)
 	{
-		while (i < lst_size)
+		if ((*stack_a)->content < prev->content)
+			push_b(stack_a, stack_b, &input);
+		else
 		{
-			if ((((*stack_a)->index >> j) & 1) == 0)
-				push_b(stack_a, stack_b, &input);
-			else
-				ra(stack_a, &input);
-			i++;
+			prev = *stack_a;
+			ra(stack_a, &input);
 		}
-		while ((*stack_b))
-			push_a(stack_a, stack_b, &input);
-		j++;
-		i = 0;
 	}
+	while (*stack_b)
+	{
+		best_rotation_in_a(stack_a, to_push(*stack_a, *stack_b), input);
+		push_a(stack_a, stack_b, &input);
+	}
+	best_rotation_in_a(stack_a, find_min(*stack_a), input);
 }

@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:49 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/02 19:29:43 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:52:34 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_list	*find_ideal_chunk(t_list *stack, int chunk, t_input *input)
 	min_2 = NULL;
 	while (current)
 	{
-		if (current->content <= chunk * ft_sqrt(input->size))
+		if (current->index <= chunk * ft_sqrt(input->size))
 		{
 			min_1 = current;
 			break ;
@@ -53,7 +53,7 @@ t_list	*find_ideal_chunk(t_list *stack, int chunk, t_input *input)
 		current = (counter_2++, current->next);
 	while (current)
 	{
-		if (current->content <= chunk * ft_sqrt(input->size))
+		if (current->index <= chunk * ft_sqrt(input->size))
 		{
 			min_2 = current;
 			pos = counter_2;
@@ -72,7 +72,7 @@ t_input *input, int chunks)
 	if (!find_ideal_chunk((*stack_find), chunks, input))
 		return ;
 	if (get_position((*stack_find), find_ideal_chunk((*stack_find), \
-chunks, input)->content)
+chunks, input)->index)
 		<= ft_lstsize((*stack_find)) / 2)
 	{
 		while ((*stack_find) != find_ideal_chunk((*stack_find), chunks, input))
@@ -90,7 +90,7 @@ chunks, input)->content)
 void	best_rotation_a(t_list **stack_find, t_list **stack_push, \
 t_input *input)
 {
-	if (get_position((*stack_find), find_max((*stack_find))->content)
+	if (get_position((*stack_find), find_max((*stack_find))->index)
 		<= ft_lstsize((*stack_find)) / 2)
 	{
 		while (*stack_find != find_max((*stack_find)))
