@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 23:39:52 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/04 20:17:43 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:31:31 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int	input_flags_check(char **args, t_input **input)
 		if (!ft_strncmp(args[counter], "--bench", ft_strlen("--bench")) \
 && !(*input)->flags.bench)
 			(*input)->flags.bench = 1;
+		else if (!ft_strncmp(args[counter], "--adaptive", \
+ft_strlen("--adaptive")) && !(*input)->flags.strategy)
+			(*input)->flags.strategy = 4;
 		else if (!ft_strncmp(args[counter], "--simple", ft_strlen("--simple")) \
 && !(*input)->flags.strategy)
 			(*input)->flags.strategy = 1;
@@ -33,9 +36,6 @@ int	input_flags_check(char **args, t_input **input)
 		else if (!ft_strncmp(args[counter], "--complex", ft_strlen("--complex")) \
 && !(*input)->flags.strategy)
 			(*input)->flags.strategy = 3;
-		else if (!ft_strncmp(args[counter], "--adaptive", \
-ft_strlen("--adaptive")) && !(*input)->flags.strategy)
-			(*input)->flags.strategy = 4;
 		else
 			break ;
 	}

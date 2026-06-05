@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 16:37:44 by danicamp          #+#    #+#             */
-/*   Updated: 2026/06/04 20:39:10 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:25:11 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	bit_count(t_list *stack_a)
 		stack_size /= 2;
 		bit++;
 	}
-	printf("%d", bit);
 	return (bit);
 }
 
