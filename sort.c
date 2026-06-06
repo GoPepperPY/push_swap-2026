@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:22:44 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 18:22:51 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/06 09:18:28 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_position_simple(t_list	*stack, int value)
+{
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		if (stack->content == value)
+			break ;
+		pos++;
+		stack = stack->next;
+	}
+	return (pos);
+}
 
 int	is_sorted(t_list *stack_a)
 {

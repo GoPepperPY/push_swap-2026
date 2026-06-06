@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:53:06 by danicamp          #+#    #+#             */
-/*   Updated: 2026/06/05 18:08:01 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/06 09:44:21 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_list	*find_min(t_list *stack)
 	min = stack;
 	while (current)
 	{
-		if (current->content < min->content)
+		if (current->index < min->index)
 			min = current;
 		current = current->next;
 	}
@@ -52,7 +52,7 @@ t_list	*find_max(t_list *stack)
 	max = stack;
 	while (current)
 	{
-		if (current->content > max->content)
+		if (current->index > max->index)
 			max = current;
 		current = current->next;
 	}
@@ -61,7 +61,7 @@ t_list	*find_max(t_list *stack)
 
 void	best_rotation_in_a(t_list **stack_find, t_list *to_push, t_input *input)
 {
-	if (get_position((*stack_find), to_push->content)
+	if (get_position_simple((*stack_find), to_push->content)
 		<= ft_lstsize((*stack_find)) / 2)
 	{
 		while (*stack_find != to_push)
@@ -78,7 +78,7 @@ void	best_rotation_in_b(t_list **stack_find, t_list *to_push, t_input *input)
 {
 	if (!to_push)
 		return ;
-	if (get_position((*stack_find), to_push->content)
+	if (get_position_simple((*stack_find), to_push->content)
 		<= ft_lstsize((*stack_find)) / 2)
 	{
 		while (*stack_find != to_push)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 19:07:48 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 19:24:46 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/06 10:16:40 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,6 @@ typedef struct s_input
 	t_flags	flags;
 	int		size;
 }	t_input;
-
-typedef struct s_cost
-{
-	t_flags	flags;
-	int		cost;
-	int		strategy;
-}	t_cost;
 
 /*********************|> TO_DELETE <|*********************/
 void	fill_my_stack(char **args, t_list **stack_a, t_input input);
@@ -82,6 +75,7 @@ void	free_split(char **split);
 /**********************|>  SORT.c  <|**********************/
 void	sort(t_list **stack_a, t_list **stack_b, t_input *input);
 int		is_sorted(t_list *stack_a);
+int		get_position_simple(t_list	*stack, int value);
 
 /**********************|>  BENCH.c  <|**********************/
 double	compute_disorder(t_list *stack);
