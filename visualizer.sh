@@ -1,1 +1,0 @@
-/home/danicamp/common_core/milestone01/push_swap-2026/push_swap_visualizer/build/bin/visualizer

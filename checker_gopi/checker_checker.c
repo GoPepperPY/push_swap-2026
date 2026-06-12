@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_checker.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:52:29 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/06 09:09:43 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/12 14:39:19 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,31 +95,31 @@ void	execute_op(char *line, t_list **stack_a, t_list **stack_b)
 		exit(1);
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	t_list	*stack_a;
-// 	t_list	*stack_b;
-// 	t_input	input;
-// 	char	*line;
+int	main(int argc, char **argv)
+{
+	t_list	*stack_a;
+	t_list	*stack_b;
+	t_input	input;
+	char	*line;
 
-// 	if (argc < 2)
-// 		return (0);
-// 	stack_a = NULL;
-// 	stack_b = NULL;
-// 	parsing(argv, &input);
-// 	fill_my_stack_checker(argv, &stack_a, input);
-// 	if (!stack_a)
-// 		return (0);
-// 	line = read_line(0);
-// 	while (line)
-// 	{
-// 		execute_op(line, &stack_a, &stack_b);
-// 		free(line);
-// 		line = read_line(0);
-// 	}
-// 	if (is_sorted(stack_a) && !stack_b)
-// 		write(1, "OK\n", 3);
-// 	else
-// 		write(1, "KO\n", 3);
-// 	return (0);
-// }
+	if (argc < 2)
+		return (0);
+	stack_a = NULL;
+	stack_b = NULL;
+	parsing(argv, &input);
+	fill_my_stack_checker(argv, &stack_a, input);
+	if (!stack_a)
+		return (0);
+	line = read_line(0);
+	while (line)
+	{
+		execute_op(line, &stack_a, &stack_b);
+		free(line);
+		line = read_line(0);
+	}
+	if (is_sorted(stack_a) && !stack_b)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+	return (0);
+}
