@@ -6,7 +6,7 @@
 /*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 04:44:10 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/12 12:47:34 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/12 15:00:19 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sort_four_numbers(t_list **stack_a, t_list **stack_b, t_input **input)
 {
 	while (1)
 	{
-		if (!(*stack_a)->index)
+		if ((*stack_a)->index == 1)
 		{
 			push_b(stack_a, stack_b, input);
 			break ;
