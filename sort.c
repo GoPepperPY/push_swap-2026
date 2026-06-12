@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:22:44 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/06 09:18:28 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/12 12:11:29 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	init(t_input *input)
 
 void	adaptative(t_list **stack_a, t_list **stack_b, t_input *input)
 {
-	input->flags.disorder = compute_disorder((*stack_a));
 	if (ft_lstsize((*stack_a)) <= 3)
 		check_small(stack_a, input);
 	else if (input->flags.disorder < 0.2)
@@ -68,8 +67,11 @@ void	adaptative(t_list **stack_a, t_list **stack_b, t_input *input)
 
 void	sort(t_list **stack_a, t_list **stack_b, t_input *input)
 {
+	input->flags.disorder = compute_disorder((*stack_a));
 	if (input->flags.bench)
 		init(input);
+	if (input->flags.bench)
+		bench(input);
 	if (is_sorted((*stack_a)) || input->size == 1)
 		return ;
 	if (input->flags.strategy == 0 || input->flags.strategy == 4)
@@ -85,6 +87,4 @@ void	sort(t_list **stack_a, t_list **stack_b, t_input *input)
 		else if (input->flags.strategy == 3)
 			complex(stack_a, stack_b, input);
 	}
-	if (input->flags.bench)
-		bench(input);
 }

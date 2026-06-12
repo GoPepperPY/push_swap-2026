@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:19:43 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/05 18:23:50 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/12 12:05:33 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ double	compute_disorder(t_list *stack)
 
 void	check_strat(int flag)
 {
-	if (!flag)
+	if (flag == 4 || !flag)
 		ft_putstr_fd("[bench] strategy: Adaptive\n", 2);
 	if (flag == 1)
 		ft_putstr_fd("[bench] strategy: Simple\n", 2);
