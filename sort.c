@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 02:22:44 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/12 12:11:29 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/12 13:13:06 by gopiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	init(t_input *input)
 void	adaptative(t_list **stack_a, t_list **stack_b, t_input *input)
 {
 	if (ft_lstsize((*stack_a)) <= 3)
-		check_small(stack_a, input);
+		check_small(stack_a, stack_b, input);
 	else if (input->flags.disorder < 0.2)
 		medium(stack_a, stack_b, input);
 	else if ((input->flags.disorder < 0.5))
@@ -79,7 +79,7 @@ void	sort(t_list **stack_a, t_list **stack_b, t_input *input)
 	else
 	{
 		if (ft_lstsize((*stack_a)) <= 3)
-			check_small(stack_a, input);
+			check_small(stack_a, stack_b, input);
 		else if (input->flags.strategy == 1)
 			simple(stack_a, stack_b, input);
 		else if (input->flags.strategy == 2)
