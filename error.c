@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gopiment <gopiment@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 02:33:40 by gopiment          #+#    #+#             */
-/*   Updated: 2026/05/19 12:08:47 by gopiment         ###   ########.fr       */
+/*   Updated: 2026/06/09 18:43:15 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	validate_number(char *argument)
 	if (argument[counter] == '+' || argument[counter] == '-')
 		counter++;
 	if (!argument[counter])
-		return (0);
+		error();
 	while (argument[counter])
 	{
 		if (!ft_isdigit(argument[counter]))
@@ -68,6 +68,6 @@ int	validate_number(char *argument)
 	}
 	number = ft_atoi(argument);
 	if (number > INT_MAX || number < INT_MIN)
-		return (0);
+		error();
 	return (1);
 }

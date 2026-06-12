@@ -6,7 +6,7 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 19:46:54 by gopiment          #+#    #+#             */
-/*   Updated: 2026/06/06 09:09:51 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/09 17:14:32 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	t_input	input;
 
+	if (argc < 2)
+		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
 	(void) argc;
@@ -79,5 +81,7 @@ int	main(int argc, char **argv)
 	input.size = ft_lstsize(stack_a);
 	stack_a = input_index(&stack_a, &input);
 	sort(&stack_a, &stack_b, &input);
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 	return (0);
 }

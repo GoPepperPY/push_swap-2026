@@ -6,17 +6,16 @@
 /*   By: danicamp <danicamp@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 16:37:44 by danicamp          #+#    #+#             */
-/*   Updated: 2026/06/06 10:05:38 by danicamp         ###   ########.fr       */
+/*   Updated: 2026/06/09 16:40:22 by danicamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 t_list	*to_push(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*head;
-	
+
 	head = stack_a;
 	while (stack_a)
 	{
